@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Filter for Reddit — Remove Ads, Block Users, Subreddits & Keywords",
+  "name": "Filter for Reddit — Remove Ads, Hide Users, Subreddits & Keywords",
   "version": "1.0.0",
   "description": "Remove Reddit ads and block users, subreddits and keywords, even when logged out. Private, one-way, free and open source.",
   "minimum_chrome_version": "116",
