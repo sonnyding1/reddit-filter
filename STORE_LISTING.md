@@ -4,24 +4,29 @@
 Filter for Reddit — Hide Posts by Keyword, User & Subreddit
 
 ## Summary (max 132 chars)
-Hide Reddit posts by keyword, user, subreddit or website. Collapse comments from blocked users. Remove promoted posts. Free.
+Remove Reddit ads and block users, subreddits and keywords, even when logged out. Private, one-way, free and open source.
 
 ## Category
 Social & Communication
 
 ## Description
-Filter for Reddit hides the posts you don't want to see on new Reddit: by keyword, user, subreddit or website. It also collapses comments from users you've blocked and removes promoted posts. It works whether you're logged in or not, so it's handy now that old.reddit.com asks you to log in.
+Filter for Reddit removes ads from new Reddit and lets you block users, subreddits, websites and keywords, with or without a Reddit account.
 
-FILTER BY
-• Keywords in post titles and flair (whole words, or /regex/ for patterns)
-• Users: their posts are hidden and their comments collapsed
-• Subreddits: keep them out of your home feed, r/popular and r/all
-• Websites: hide link posts to sites you don't want
+REMOVES ADS
+• Promoted posts in your feed
+• Ads inside comment threads and in the sidebar
+
+BLOCKS WITHOUT AN ACCOUNT
+• Hide users, subreddits and websites even when you're logged out. Reddit's own block and mute need a login.
+• Private and one-way: unlike Reddit's block, the other person isn't affected
+• A blocked user's posts are hidden and their comments collapsed
+• Right-click any post or comment, then Filter for Reddit, to hide that user, subreddit or website in one click
+
+FILTERS BY KEYWORD
+• Hide posts whose title or flair matches words or phrases (whole words, or /regex/ for patterns)
+• Optionally hide auto-generated usernames (like Original-Ad6801), which are often new or throwaway accounts
 
 ALSO
-• Remove promoted posts and ads
-• Optionally hide auto-generated usernames (like Original-Ad6801), which are often new or throwaway accounts
-• Right-click any post or comment, then Filter for Reddit, to hide that user, subreddit or website in one click
 • A small "Hidden post (reason) · Show" line marks each hidden post, so nothing disappears silently. You can turn it off.
 • The toolbar badge shows how many items were hidden on the page
 
