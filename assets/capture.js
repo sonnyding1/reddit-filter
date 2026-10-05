@@ -1,5 +1,5 @@
 // Captures store screenshots (1280x800) and a demo video from live Reddit.
-// Usernames, avatars and ad content are blurred. Output: assets/screenshots/, assets/video/.
+// Usernames and avatars are blurred; ads are shown and outlined. Output: assets/screenshots/, assets/video/.
 // Run: node assets/capture.js   (needs network; video needs ffmpeg)
 import fs from 'node:fs';
 import path from 'node:path';
@@ -21,10 +21,9 @@ const PRIVACY_CSS = `
   a[href*="/user/"], faceplate-hovercard, [slot="authorName"], shreddit-comment [slot="commentMeta"] a,
   shreddit-post img, shreddit-comment img, shreddit-post [slot="post-media-container"]
   { filter: blur(5px) !important; }
-  shreddit-ad-post > * { filter: blur(16px) !important; }
   shreddit-ad-post { position: relative !important; display: block; outline: 3px solid #ff4500 !important; outline-offset: -3px; border-radius: 12px; }
-  shreddit-ad-post::after { content: "Ad disguised as a post"; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-    background: #ff4500; color: #fff; font: 700 18px system-ui, sans-serif; padding: 8px 16px; border-radius: 999px; }
+  shreddit-ad-post::after { content: "Ad disguised as a post"; position: absolute; top: 9px; right: 48px;
+    background: #ff4500; color: #fff; font: 700 13px system-ui, sans-serif; padding: 3px 10px; border-radius: 999px; }
   shreddit-comment[data-rf-hidden] > details > summary { outline: 3px solid #2f4f5a; outline-offset: 4px; border-radius: 8px; position: relative; }
   shreddit-comment[data-rf-hidden] > details > summary::after { content: "Hidden user: collapsed"; position: absolute; right: 8px; top: 50%; transform: translateY(-50%);
     background: #2f4f5a; color: #fff; font: 700 14px system-ui, sans-serif; padding: 4px 12px; border-radius: 999px; }
@@ -79,14 +78,15 @@ async function prep(page, { titles = false } = {}) {
 }
 
 // Feed column crop around an element.
-async function feedClip(page, selector, { height = 640 } = {}) {
-  const box = await page.evaluate(sel => {
+async function feedClip(page, selector, { height = 640, align = 'center' } = {}) {
+  const box = await page.evaluate((sel, align) => {
     const el = document.querySelector(sel);
-    el.scrollIntoView({ block: 'center' });
+    el.scrollIntoView({ block: align });
+    if (align === 'start') window.scrollBy(0, -130);
     const feed = el.closest('main') ?? document.querySelector('main');
     const f = feed.getBoundingClientRect();
     return { x: f.left, width: f.width };
-  }, selector);
+  }, selector, align);
   await sleep(600);
   const top = Math.max(60, (800 - height) / 2);
   const scrollY = await page.evaluate(() => window.scrollY);
@@ -108,7 +108,7 @@ const adId = await feed.evaluate(() => {
   ad.id ||= 'rf-demo-ad';
   return ad.id;
 });
-const clip = await feedClip(feed, `#${adId}`, { height: 600 });
+const clip = await feedClip(feed, `#${adId}`, { height: 600, align: 'start' });
 await feed.screenshot({ path: path.join(RAW, 'ads-before.png'), clip, captureBeyondViewport: false });
 // Mark the post below the ad so the "after" crop lines up on the same content.
 await feed.evaluate(id => {
@@ -119,7 +119,7 @@ await feed.evaluate(id => {
 }, adId);
 await setSettings({ ...RESET });
 await sleep(800);
-const clipAfter = await feedClip(feed, '[data-rf-anchor]', { height: 600 });
+const clipAfter = await feedClip(feed, '[data-rf-anchor]', { height: 600, align: 'start' });
 await feed.screenshot({ path: path.join(RAW, 'ads-after.png'), clip: clipAfter, captureBeyondViewport: false });
 
 // ---- 2. keyword and subreddit filters with placeholders ---------------------------
