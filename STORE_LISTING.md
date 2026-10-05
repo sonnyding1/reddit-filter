@@ -3,7 +3,7 @@
 ## Name (from manifest)
 Filter for Reddit — Hide Posts by Keyword, User & Subreddit
 
-## Summary (max 132 chars)
+## Summary (max 132 chars; Chrome takes this from the manifest description)
 Remove Reddit ads and block users, subreddits and keywords, even when logged out. Private, one-way, free and open source.
 
 ## Category
