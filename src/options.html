@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Filter for Reddit settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <main>
+    <header>
+      <img src="icons/48.png" alt="" width="40" height="40">
+      <div>
+        <h1>Filter for Reddit</h1>
+        <p class="sub">Changes save automatically and apply to open Reddit tabs right away. <span id="saved" class="saved" hidden>Saved</span></p>
+      </div>
+    </header>
+
+    <section>
+      <div class="choices">
+        <label><input type="checkbox" data-key="enabled"> Filtering on</label>
+        <label><input type="checkbox" data-key="hidePromoted"> Hide promoted posts and ads</label>
+        <label><input type="checkbox" data-key="showPlaceholder"> Leave a small "Hidden post" line where a post was removed</label>
+        <label><input type="checkbox" data-key="hideDefaultNames"> Hide posts and comments from auto-generated usernames (like Original-Ad6801), often new or throwaway accounts</label>
+      </div>
+    </section>
+
+    <section>
+      <h2>Keywords</h2>
+      <p class="hint">One per line. Matches whole words in post titles and flair, ignoring case. Use <code>/regex/</code> for patterns. Lines starting with # are ignored.</p>
+      <textarea data-list="keywords" placeholder="spoiler&#10;election&#10;/\bgpt-?\d/"></textarea>
+    </section>
+
+    <section>
+      <h2>Users</h2>
+      <p class="hint">Their posts are hidden and their comments collapsed. Tip: right-click a post or comment on Reddit and choose Filter for Reddit, then Hide this user.</p>
+      <textarea data-list="users" placeholder="u/example_user"></textarea>
+    </section>
+
+    <section>
+      <h2>Subreddits</h2>
+      <p class="hint">Hidden from your home feed, r/popular and r/all.</p>
+      <textarea data-list="subreddits" placeholder="r/example"></textarea>
+    </section>
+
+    <section>
+      <h2>Websites</h2>
+      <p class="hint">Link posts to these sites are hidden. Subdomains are included.</p>
+      <textarea data-list="domains" placeholder="example.com"></textarea>
+    </section>
+
+    <footer class="muted">
+      Free and open source. Your filters stay in your browser and sync through your Chrome profile.
+      The extension only runs on reddit.com and sends nothing anywhere.
+    </footer>
+  </main>
+  <script src="match.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

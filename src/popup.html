@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="options.css">
+  <style>
+    body { width: 260px; }
+    main { padding: 14px 16px; }
+    .count { font-size: 28px; font-weight: 700; margin: 0; }
+    .row { display: flex; align-items: center; gap: 8px; margin: 12px 0; }
+    button { width: 100%; }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="count" id="count">0</p>
+    <p class="muted" id="count-label">hidden on this page</p>
+    <label class="row"><input type="checkbox" id="enabled"> Filtering on</label>
+    <button id="edit" type="button">Edit filters</button>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>

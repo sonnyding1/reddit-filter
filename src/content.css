@@ -1,0 +1,33 @@
+[data-rf-hidden]:not(shreddit-comment):not([data-rf-shown]) {
+  display: none !important;
+}
+
+/* The divider Reddit draws after each feed post would stack up. */
+article[data-rf-hidden]:not([data-rf-shown]) + hr {
+  display: none !important;
+}
+
+html.rf-hide-promoted :is(shreddit-ad-post, shreddit-comment-tree-ad, shreddit-comments-page-ad, shreddit-sidebar-ad),
+html.rf-hide-promoted reddit-pdp-right-rail-post:has(ad-event-tracker),
+html.rf-hide-promoted article:has(> shreddit-ad-post) {
+  display: none !important;
+}
+
+.rf-placeholder {
+  font: 12px/1.4 system-ui, sans-serif;
+  color: #576f76;
+  padding: 4px 16px;
+  margin: 2px 0;
+  border-radius: 8px;
+  background: rgba(127, 127, 127, 0.08);
+}
+
+.rf-placeholder button {
+  font: inherit;
+  color: inherit;
+  text-decoration: underline;
+  background: none;
+  border: 0;
+  padding: 0 0 0 4px;
+  cursor: pointer;
+}

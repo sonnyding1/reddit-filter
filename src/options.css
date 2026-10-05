@@ -1,0 +1,107 @@
+:root {
+  --bg: #ffffff;
+  --fg: #1f2328;
+  --muted: #59636e;
+  --line: #d1d9e0;
+  --card: #f6f8fa;
+  --accent: #1a73e8;
+  --accent-fg: #ffffff;
+  --ok: #1a7f37;
+  --err: #cf222e;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1f1f1f;
+    --fg: #e3e3e3;
+    --muted: #a8a8a8;
+    --line: #3c3c3c;
+    --card: #292929;
+    --accent: #8ab4f8;
+    --accent-fg: #1f1f1f;
+    --ok: #81c995;
+    --err: #f28b82;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+main { max-width: 640px; margin: 0 auto; padding: 32px 16px 48px; }
+
+header { display: flex; gap: 14px; align-items: center; margin-bottom: 24px; }
+h1 { font-size: 22px; margin: 0; }
+h2 { font-size: 16px; margin: 0 0 10px; }
+h3 { font-size: 14px; margin: 16px 0 8px; color: var(--muted); font-weight: 600; }
+.sub, .muted { color: var(--muted); margin: 0; }
+
+section {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-bottom: 16px;
+}
+
+.choices { display: grid; gap: 4px; }
+.choices label { display: flex; gap: 10px; align-items: center; padding: 4px 0; cursor: pointer; }
+input[type="radio"] { accent-color: var(--accent); margin: 0; }
+
+ul { margin: 0 0 8px; padding-left: 20px; }
+kbd {
+  font: 12px ui-monospace, monospace;
+  border: 1px solid var(--line);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  padding: 0 5px;
+  background: var(--bg);
+}
+
+a { color: var(--accent); }
+
+button {
+  font: inherit;
+  border: 0;
+  border-radius: 6px;
+  padding: 8px 16px;
+  background: var(--accent);
+  color: var(--accent-fg);
+  cursor: pointer;
+  font-weight: 600;
+}
+button.link { background: none; color: var(--accent); padding: 8px 4px; font-weight: 400; }
+
+.badge {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ok);
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  padding: 1px 8px;
+  margin-left: 6px;
+}
+.error { color: var(--err); margin: 8px 0 0; }
+
+footer { font-size: 13px; padding: 0 4px; }
+
+textarea {
+  width: 100%;
+  min-height: 96px;
+  font: 13px/1.5 ui-monospace, monospace;
+  color: var(--fg);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 8px 10px;
+  resize: vertical;
+}
+.hint { font-size: 13px; color: var(--muted); margin: 0 0 8px; }
+.saved { font-size: 13px; color: var(--ok); margin-left: 8px; }
+input[type="checkbox"] { accent-color: var(--accent); margin: 0; }

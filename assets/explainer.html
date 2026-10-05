@@ -1,0 +1,28 @@
+<!doctype html><meta charset="utf-8">
+<style>
+  body { margin:0; width:1280px; height:800px; background:#eef1f2; font-family: system-ui, sans-serif; color:#1a1a1b; display:grid; grid-template-columns: 1fr 1fr; gap:56px; align-items:center; padding:0 80px; box-sizing:border-box; }
+  h1 { font-size:44px; line-height:1.15; margin:0 0 16px; }
+  p { font-size:22px; color:#576f76; margin:0 0 14px; line-height:1.4; }
+  .feed { background:#fff; border-radius:16px; padding:14px; box-shadow:0 2px 12px rgba(0,0,0,.08); }
+  .post { padding:14px 16px; border-bottom:1px solid #e5ebee; }
+  .post:last-child { border-bottom:0; }
+  .meta { font-size:14px; color:#576f76; margin-bottom:6px; }
+  .title { font-size:19px; font-weight:600; }
+  .hidden { font-size:14px; color:#576f76; background:#f3f5f6; border-radius:8px; padding:8px 14px; margin:6px 0; }
+  .hidden u { margin-left:6px; }
+  .chip { display:inline-block; background:#2f4f5a; color:#fff; border-radius:999px; padding:4px 12px; font-size:16px; margin:4px 6px 0 0; }
+</style>
+<div>
+  <h1>See less of what you don't want on Reddit</h1>
+  <p>Hide posts by keyword, user, subreddit or website. Collapse comments from blocked users. Remove promoted posts.</p>
+  <div><span class="chip">"spoiler"</span><span class="chip">u/spam_account</span><span class="chip">r/somesub</span><span class="chip">example.com</span></div>
+</div>
+<div class="feed">
+  <div class="post"><div class="meta">r/books · 3h</div><div class="title">What are you reading this week?</div></div>
+  <div class="hidden">Hidden post ("spoiler")<u>Show</u></div>
+  <div class="post"><div class="meta">r/cooking · 5h</div><div class="title">Finally nailed a sourdough starter</div></div>
+  <div class="hidden">Hidden post (promoted)<u>Show</u></div>
+  <div class="hidden">Hidden post (user u/spam_account)<u>Show</u></div>
+  <div class="post"><div class="meta">r/hiking · 8h</div><div class="title">Sunrise from the ridge this morning</div></div>
+  <div class="hidden">Hidden post (r/somesub)<u>Show</u></div>
+</div>
