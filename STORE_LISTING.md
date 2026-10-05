@@ -1,7 +1,7 @@
 # Chrome Web Store listing: copy and paste
 
 ## Name (from manifest)
-Filter for Reddit — Hide Posts by Keyword, User & Subreddit
+Filter for Reddit — Remove Ads, Block Users, Subreddits & Keywords
 
 ## Summary (max 132 chars; Chrome takes this from the manifest description)
 Remove Reddit ads and block users, subreddits and keywords, even when logged out. Private, one-way, free and open source.
