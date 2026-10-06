@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Filter for Reddit — Remove Ads, Hide Users & Subreddits, Even Logged Out",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Remove Reddit ads and hide users, subreddits and keywords, even when logged out. Private, one-way, free and open source.",
   "minimum_chrome_version": "116",
   "background": {

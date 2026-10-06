@@ -1,5 +1,9 @@
 # Filter for Reddit
 
+[![Install from Chrome Web Store](https://img.shields.io/chrome-web-store/v/inoehhlngobanjlhhmncpkbbdpfbdmkl?label=Chrome%20Web%20Store&logo=googlechrome&logoColor=white&color=2f4f5a)](https://chromewebstore.google.com/detail/filter-for-reddit-%E2%80%94-remov/inoehhlngobanjlhhmncpkbbdpfbdmkl) [![Users](https://img.shields.io/chrome-web-store/users/inoehhlngobanjlhhmncpkbbdpfbdmkl?color=2f4f5a)](https://chromewebstore.google.com/detail/filter-for-reddit-%E2%80%94-remov/inoehhlngobanjlhhmncpkbbdpfbdmkl)
+
+**[Install from the Chrome Web Store](https://chromewebstore.google.com/detail/filter-for-reddit-%E2%80%94-remov/inoehhlngobanjlhhmncpkbbdpfbdmkl)**
+
 A Chrome extension for new Reddit:
 
 1. **Removes ads**: promoted posts in feeds, ads inside comment threads and sidebar ads.
